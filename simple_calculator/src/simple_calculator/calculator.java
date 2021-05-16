@@ -1,7 +1,6 @@
 package simple_calculator;
 
-//Java program to create a simple calculator
-//with basic +, -, /, * using java swing elements
+//Develpped By M Nabeel Ali - 8356
 
 import java.awt.event.*;
 import javax.swing.*;
@@ -10,13 +9,11 @@ class calculator extends JFrame implements ActionListener {
 	// create a frame
 	static JFrame f;
 
-	// create a textfield
 	static JTextField l;
 
-	// store operator and operands
+	
 	String s0, s1, s2;
 
-	// default constructor
 	calculator()
 	{
 		s0 = s1 = s2 = "";
@@ -25,11 +22,10 @@ class calculator extends JFrame implements ActionListener {
 	// main function
 	public static void main(String args[])
 	{
-		// create a frame
+	
 		f = new JFrame("calculator");
 
 		try {
-			// set look and feel
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		}
 		catch (Exception e) {
@@ -169,14 +165,14 @@ class calculator extends JFrame implements ActionListener {
 			s1 = s2 = "";
 		}
 		else {
-			// if there was no operand
+			
 			if (s1.equals("") || s2.equals(""))
 				s1 = s;
-			// else evaluate
+
 			else {
 				double te;
 
-				// store the value in 1st
+		
 				if (s1.equals("+"))
 					te = (Double.parseDouble(s0) + Double.parseDouble(s2));
 				else if (s1.equals("-"))
@@ -186,17 +182,15 @@ class calculator extends JFrame implements ActionListener {
 				else
 					te = (Double.parseDouble(s0) * Double.parseDouble(s2));
 
-				// convert it to string
+			
 				s0 = Double.toString(te);
 
-				// place the operator
 				s1 = s;
 
-				// make the operand blank
 				s2 = "";
 			}
 
-			// set the value of text
+			
 			l.setText(s0 + s1 + s2);
 		}
 	}
